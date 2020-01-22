@@ -10,6 +10,7 @@ public class Access : MonoBehaviour
     public Button boton;
     public GameObject input;
     public GameObject input1;
+    public GameObject input2;
     private DBConnector _connector;
    
    
@@ -18,7 +19,8 @@ public class Access : MonoBehaviour
     {
         _connector = gameObject.AddComponent<DBConnector>();
         _connector.OpenDB("URI=file:Assets\\db\\" + URIDataBase);
-        _connector.InsertData(input.GetComponent<Text>().text, player.transform.position.x.ToString(), player.transform.position.y.ToString(), player.transform.position.z.ToString());
+
+        _connector.UpdateData(input.GetComponent<Text>().text, input1.GetComponent<Text>().text, input2.GetComponent<Text>().text, player.transform.position.x.ToString(), player.transform.position.y.ToString(), player.transform.position.z.ToString());
         _connector.CloseDB();
       
     }

@@ -15,7 +15,7 @@ public class mover : MonoBehaviour {
     Vector3 posicionInicial;
     void Start () {
         posicionInicial = transform.position;
-        textoVictoria.enabled = false;
+
     }
 
     // Update is called once per frame
