@@ -64,6 +64,7 @@
      <Compile Include="Assets\codigo\giro.cs" />
      <Compile Include="Assets\codigo\mover.cs" />
      <Compile Include="Assets\codigo\pause.cs" />
+     <Compile Include="Assets\codigo\reloj.cs" />
      <Compile Include="Assets\Scripts\Access.cs" />
      <Compile Include="Assets\Scripts\DBConnector.cs" />
  <Reference Include="Unity.Timeline.Editor">

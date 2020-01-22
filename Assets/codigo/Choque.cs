@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Choque : MonoBehaviour {
     int punto = 0;
     int error = 0;
-    public Text win;
+    public Text Buenas;
+    public Text Malas;
     // Use this for initialization
     void Start () {
 		
@@ -16,16 +17,23 @@ public class Choque : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider otro)
     {
-        Destroy(other.gameObject);
-        error = error + 1;
-        print(error);
-        if (error >= 3)
+        if (otro.CompareTag("Buenas"))
         {
-            win.text = "PERDISTE";
-            win.gameObject.SetActive(true);
+            otro.gameObject.SetActive(false);
+            punto = punto + 1;
+            Buenas.text = "Buenas: " + punto;
         }
+        if (otro.CompareTag("Malas"))
+        {
+            otro.gameObject.SetActive(false);
+            error = error + 1;
+            Malas.text = "Malas: " + error;
+        }
+
+        
+
     }
     
 }
